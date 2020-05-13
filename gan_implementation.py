@@ -109,7 +109,3 @@ def generate_and_save_images(model, epoch, test_input):
   plt.show()
 
 train(train_dataset, Epochs)
-
-from google.colab import drive
-drive.mount('/content/drive')
-train_data_
