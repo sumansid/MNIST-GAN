@@ -36,7 +36,7 @@ generator = make_generator_model()
 
 noise = tf.random.normal([1,100])
 generated_image = generator(noise,training=False)
-plt.imshow(generated_image[0,:,:,0], cmap="gray")
+
 
 def make_discriminator():
   model = tf.keras.Sequential()
@@ -52,7 +52,6 @@ def make_discriminator():
 
 discriminator = make_discriminator()
 decision = discriminator(generated_image)
-print(decision)
 
 cross_entropy = tf.keras.losses.BinaryCrossentropy(from_logits=True)
 
