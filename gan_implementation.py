@@ -56,7 +56,7 @@ discriminator = make_discriminator()
 decision = discriminator(generated_image)
 
 cross_entropy = tf.keras.losses.BinaryCrossentropy(from_logits=True)
-
+# Function to calculate the discriminator loss
 def discriminator_loss(real_output, fake_output):
   real_loss = cross_entropy(tf.ones_like(real_output), real_output)
   fake_loss = cross_entropy(tf.zeros_like(fake_output), fake_output)
