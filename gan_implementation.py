@@ -1,5 +1,6 @@
 """GAN implementation.ipynb
 """
+# Imports
 import tensorflow as tf
 from tensorflow.keras import layers
 import numpy as np
@@ -7,14 +8,15 @@ import matplotlib.pyplot as plt
 import PIL
 from IPython import display
 import imageio
-
+# Get the MNIST dataset
 (train_images, train_labels),(test_images, test_labels) = tf.keras.datasets.mnist.load_data()
-
+# Reshape
 train_images = train_images.reshape(train_images.shape[0], 28,28,1).astype("float32")
 train_images = (train_images - 127.5) / 127.5
 Buffer_size = 60000
 Batch_size = 256
 
+# Shuffle and convert to minibatches
 train_dataset = tf.data.Dataset.from_tensor_slices(train_images).shuffle(Buffer_size).batch(Batch_size)
 
 def make_generator_model():
