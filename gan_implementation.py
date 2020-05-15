@@ -18,7 +18,7 @@ Batch_size = 256
 
 # Shuffle and convert to minibatches
 train_dataset = tf.data.Dataset.from_tensor_slices(train_images).shuffle(Buffer_size).batch(Batch_size)
-
+# Function that makes a generator model
 def make_generator_model():
   model = tf.keras.Sequential()
   model.add(layers.Dense(7*7*256, use_bias=False, input_shape=(100,)))
@@ -35,7 +35,7 @@ def make_generator_model():
   return model
 
 generator = make_generator_model()
-
+# Create a noise image
 noise = tf.random.normal([1,100])
 generated_image = generator(noise,training=False)
 
