@@ -1,4 +1,4 @@
-# MNIST GAN
+# Mnist Digits GAN
 
 #### Generative Adversarial Network trained on the MNIST handwritten digits dataset.
 
