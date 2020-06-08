@@ -31,6 +31,7 @@ def make_generator_model():
   model.add(layers.Conv2DTranspose(64,(5,5),strides=(2,2), padding='same', use_bias=False))
   model.add(layers.BatchNormalization())
   model.add(layers.LeakyReLU())
+  # Setting the output layer with activation of "Tanh" as mentioned in the DCGAN paper.
   model.add(layers.Conv2DTranspose(1,(5,5),strides=(2,2), padding='same', use_bias=False, activation="tanh"))
   return model
 
