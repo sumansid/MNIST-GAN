@@ -1,6 +1,6 @@
-# Mnist Digits GAN
+# Mnist Digits DCGAN
 
-#### Generative Adversarial Network trained on the MNIST handwritten digits dataset.
+#### Deep Convolutional Generative Adversarial Network trained on the MNIST handwritten digits dataset.
 
 #### Example : 
 
